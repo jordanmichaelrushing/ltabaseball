@@ -1,0 +1,51 @@
+<br><br><br><br><br>
+
+<p style="margin-left:20px"><font face="Arial" size="2" color="#008000">You have attempted to access a Manager/Coaches only page.</font></p>
+<p style="margin-left:20px"><font face="Arial" size="2" color="#008000">Please login with a username and password that
+has Manager/Coaches level approval.</font></p>
+<p style="margin-left:20px"><font face="Arial" size="2" color="#008000">If your are not a registered user for this site 
+and are a Manager or Coach of a team, please select</font></p>
+<p style="margin-left:20px"><b><font face="Arial" size="2">
+<a href="register.asp"><font color="#008000">Register for the site</font></a></font></b></p>
+<p style="margin-left:20px"><font face="Arial" size="2" color="#008000">or<br>
+<br>
+If you are a registered user of the site, but have forgotten&nbsp; your 
+password, please select</font></p>
+<p style="margin-left:20px"><b><font face="Arial" size="2">
+<a href="forgot_password.asp">
+<font color="#008000">Forgot My 
+Password</font></a></font></b></p>
+<script language="JavaScript" type="text/javascript"><!--
+function FrontPage_Form1_Validator(theForm)
+{
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789-";
+  var checkStr = theForm.password.value;
+  var allValid = true;
+  var validGroups = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter and digit characters in the \"password\" field.");
+    theForm.password.focus();
+    return (false);
+  }
+  return (true);
+}
+//--></script><form  style="margin-left:20px" method="POST" action="logonvalidation3.asp" onsubmit="return FrontPage_Form1_Validator(this)" name="FrontPage_Form1" language="JavaScript">
+  <p><font color="#008000"><input type="text" name="username" size="20">  Username<br>
+  &nbsp;<input type="password" name="password" size="12"> Password</font></p>
+  <p><font color="#008000"><input type="submit" value="Login" name="B1"><input type="reset" value="Reset" name="B2"></font></p>
+</form>
+<p>&nbsp;</p>

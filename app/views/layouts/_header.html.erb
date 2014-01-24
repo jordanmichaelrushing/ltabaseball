@@ -1,0 +1,106 @@
+<span>
+  <h1 style="margin-bottom:-245px;font-style: italic;word-spacing: 10px;margin-top: 0px;height:100px;background-color:white;box-shadow: 0px 10px 20px #888;">
+    <li class="dropdown" style="list-style-type: none;display: initial;margin-left:17.5%">
+      <a href="#" class="dropdown header-link dropdown-toggle" data-toggle="dropdown">GAMES</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Today</a></li>
+        <li><a href="#">Tomorrow</a></li>
+        <li class="divider"></li>
+        <li><a href="#">This Week</a></li>
+      </ul>
+    </li> | 
+
+    <li class="dropdown" style="list-style-type: none;display: initial;">
+      <a href="#" class="dropdown header-link dropdown-toggle" data-toggle="dropdown">DIVISIONS</a>
+      <ul class="dropdown-menu">
+        <li><a href="#collapsible1" class="accordion-toggle" data-parent="#menu1"><b>C Division</b></a></li>
+        <li class="dropdown-submenu collapse" id="collapsible1">
+          <a href="#">Schedule</a>
+          <ul class="dropdown-menu">
+            <li><a href="#div-c-sched" class="accordion-toggle" data-parent="#menu2"><b>Teams</b></a></li>
+            <li class="collapse" id="div-c-sched">
+              <a href="#" id="div-c-bel-sched">Belmont</a>
+              <a href="#" id="div-c-brook-sched">Brookline</a>
+              <a href="#" id="div-c-cam-sched">Cambridge</a>
+              <a href="#" id="div-c-ever-sched">Everett</a>
+              <a href="#" id="div-c-fram-sched">Framingham</a>
+              <a href="#" id="div-c-grot-sched">Groton</a>
+              <a href="#" id="div-c-marl-sched">Marlboro</a>
+              <a href="#" id="div-c-med-sched">Medford</a>
+              <a href="#" id="div-c-mel-sched">Melrose</a>
+              <a href="#" id="div-c-new-sched">Newton</a>
+              <a href="#" id="div-c-park-sched">Parkway</a>
+              <a href="#" id="div-c-sud-sched">Sudbury</a>
+              <a href="#" id="div-c-wake-sched">Wakefield</a>
+              <a href="#" id="div-c-win-sched">Winchester</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#"><b>B Division</b></a></li>
+        <li><a href="#"><b>A Division</b></a></li>
+        <li class="divider"></li>
+        <li><a href="#"><b>Senior Division</b></a></li>
+      </ul>
+    </li>
+
+    <a href="/" id="logo-link"><img src="/assets/logo.png" style="width: 200px;margin-bottom: -105px;position: relative;z-index: 10;"></a>
+    <a href="<%=new_user_session_path%>" class="header-link">COACHES</a> | 
+    <a href="#" class="header-link">ABOUT US</a> 
+  </h1>
+</span>
+<div class="messagepop pop popfive">
+    <%= render partial: '/static_pages/sched_fram_c' %>
+</div>
+<script language="javascript" type="text/javascript">
+      function deselect() {
+          $(".pop").slideFadeToggle(function() { 
+              $("#div-c-fram-sched").removeClass("selected");
+          });    
+      }
+
+      $(function() {
+          $("#div-c-fram-sched").click(function() {
+              if($(this).hasClass("selected")) {
+                  deselect();               
+              } else {
+                  $(this).addClass("selected");
+                  $(".pop").slideFadeToggle(function() { 
+                      $("#email").focus();
+                  });
+              }
+              return false;
+          });
+
+          $(".close").on('click', function() {
+              deselect();
+              return false;
+          });
+      });
+      $.fn.slideFadeToggle = function(easing, callback) {
+          return this.animate({ opacity: 'toggle', height: 'toggle' }, "fast", easing, callback);
+      };
+
+      $('.dropdown-toggle').dropdown();
+      $('.dropdown-menu').each(function() {
+          $(this).on('click', '.accordion-toggle', function(event) {
+              event.stopPropagation();
+              var $this = $(this);
+
+              var parent = $this.data('parent');
+              var actives = parent && $(parent).find('.collapse');
+
+              // From bootstrap itself
+              if (actives && actives.length) {
+                  hasData = actives.data('collapse');
+                  if (hasData && hasData.transitioning) return;
+                  actives.collapse('hide');
+              }
+
+              var target = $this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, ''); //strip for ie7
+
+              $(target).collapse('toggle');
+              return false;
+          });
+      });
+      deselect();
+</script>
