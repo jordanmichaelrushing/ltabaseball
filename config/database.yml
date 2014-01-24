@@ -20,6 +20,7 @@ test:
 
 production:
   adapter: postgresql
+  encoding: unicode
   database: ltabaseball
   password: Texman6626
   pool: 5
