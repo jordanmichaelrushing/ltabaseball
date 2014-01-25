@@ -1,0 +1,55 @@
+@media screen and (width:1200px) {
+  .carousel.fade .item img {
+    height: 100%;
+  }
+}
+@media screen and (max-width:1020px) { 
+  h1 {
+    font-size: 18px;
+  }
+  #my-drop {
+    margin-left: 1.5%;
+  }
+  #logo-link > img {
+      width: 133px;
+  }
+}
+@media screen and (max-width:820px) { 
+  h1 {
+    font-size: 18px;
+  }
+  #my-drop {
+    margin-left: 1.5%;
+  }
+  #logo-link > img {
+      width: 133px;
+  }
+}
+@media screen and (max-width:620px) { 
+  h1 {
+    font-size: 18px;
+  }
+  #my-drop {
+    margin-left: 1.5%;
+  }
+  #logo-link > img {
+      width: 133px;
+  }
+  .carousel-inner > .item > img {
+    height: 54%;
+  }
+}
+@media screen and (max-width:320px) { 
+  h1 {
+    font-size: 18px;
+  }
+  #my-drop {
+    margin-left: 1.5%;
+  }
+  #logo-link > img {
+      width: 133px;
+  }
+  .carousel-inner > .item > img {
+    height: 54%;
+  }
+}
