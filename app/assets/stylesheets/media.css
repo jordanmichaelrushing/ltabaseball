@@ -1,6 +1,9 @@
-@media screen and (width:1200px) {
+@media screen and (width:1265px) {
   .carousel.fade .item img {
     height: 100%;
+  }
+  #my-drop {
+      margin-left: 11.5%;
   }
 }
 @media screen and (max-width:1024px) { 
